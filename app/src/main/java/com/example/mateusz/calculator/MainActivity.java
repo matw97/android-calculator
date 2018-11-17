@@ -18,11 +18,15 @@ public class MainActivity extends AppCompatActivity {
         EditText firstInput = findViewById(R.id.firstNumber);
         EditText secondInput = findViewById(R.id.secondNumber);
         TextView resultView = findViewById(R.id.result);
-        int firstNumber =  Integer.parseInt(firstInput.getText().toString());
-        int secondNumber = Integer.parseInt(secondInput.getText().toString());
-        int result = firstNumber + secondNumber;
 
-        resultView.setText(String.valueOf(result));
+        try {
+            int firstNumber = Integer.parseInt(firstInput.getText().toString());
+            int secondNumber = Integer.parseInt(secondInput.getText().toString());
+            int result = firstNumber + secondNumber;
+            resultView.setText(String.valueOf(result));
+        } catch (Exception e) {
+            resultView.setText("Inputs can't be empty!");
+        }
     }
 
     public void subtract(View view) {
@@ -30,11 +34,14 @@ public class MainActivity extends AppCompatActivity {
         EditText secondInput = findViewById(R.id.secondNumber);
         TextView resultView = findViewById(R.id.result);
 
-        int firstNumber = Integer.parseInt(firstInput.getText().toString());
-        int secondNumber =  Integer.parseInt(secondInput.getText().toString());
-        int result = firstNumber - secondNumber;
-
-        resultView.setText(String.valueOf(result));
+        try {
+            int firstNumber = Integer.parseInt(firstInput.getText().toString());
+            int secondNumber = Integer.parseInt(secondInput.getText().toString());
+            int result = firstNumber - secondNumber;
+            resultView.setText(String.valueOf(result));
+        } catch (Exception e) {
+            resultView.setText("Inputs can't be empty!");
+        }
     }
 
     public void multiply(View view) {
@@ -42,26 +49,32 @@ public class MainActivity extends AppCompatActivity {
         EditText secondInput = findViewById(R.id.secondNumber);
         TextView resultView = findViewById(R.id.result);
 
-        int firstNumber = Integer.parseInt(firstInput.getText().toString());
-        int secondNumber =  Integer.parseInt(secondInput.getText().toString());
-        int result = firstNumber * secondNumber;
-
-        resultView.setText(String.valueOf(result));
+        try {
+            int firstNumber = Integer.parseInt(firstInput.getText().toString());
+            int secondNumber = Integer.parseInt(secondInput.getText().toString());
+            int result = firstNumber + secondNumber;
+            resultView.setText(String.valueOf(result));
+        } catch (Exception e) {
+            resultView.setText("Inputs can't be empty!");
+        }
     }
 
     public void divide(View view) {
         EditText firstInput = findViewById(R.id.firstNumber);
         EditText secondInput = findViewById(R.id.secondNumber);
         TextView resultView = findViewById(R.id.result);
-
-        int firstNumber = Integer.parseInt(firstInput.getText().toString());
-        int secondNumber =  Integer.parseInt(secondInput.getText().toString());
-        int result;
         try {
-            result = firstNumber / secondNumber;
-            resultView.setText(String.valueOf(result));
+            int firstNumber = Integer.parseInt(firstInput.getText().toString());
+            int secondNumber =  Integer.parseInt(secondInput.getText().toString());
+            int result;
+            try {
+                result = firstNumber / secondNumber;
+                resultView.setText(String.valueOf(result));
+            } catch (Exception e) {
+                resultView.setText("You can't divide by 0!");
+            }
         } catch (Exception e) {
-            resultView.setText("You can't divide by 0!");
+            resultView.setText("Inputs can't be empty!");
         }
     }
 }

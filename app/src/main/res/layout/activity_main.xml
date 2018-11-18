@@ -73,7 +73,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Result"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textSize="36sp" />
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             int firstNumber = Integer.parseInt(firstInput.getText().toString());
             int secondNumber = Integer.parseInt(secondInput.getText().toString());
-            int result = firstNumber + secondNumber;
+            int result = firstNumber * secondNumber;
             resultView.setText(String.valueOf(result));
         } catch (Exception e) {
             resultView.setText("Inputs can't be empty!");
